@@ -34,7 +34,15 @@ handlers:
 
 - url: /images
   static_dir: images
+  
+- url: /upload
+  static_dir: upload
 
 - url: /(.*\.(gif|png|jpg))$
   static_files: static/\1
   upload: static/.*\.(gif|png|jpg)$
+  
+- url: /(.*\.pdf)
+  mime_type: application/pdf
+  static_files: static/\1
+  upload: static/(.*\.pdf)
