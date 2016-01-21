@@ -1,4 +1,3 @@
-application: inaveedhome
 runtime: php55
 api_version: 1
 
@@ -7,7 +6,7 @@ handlers:
   script: index.html
 #  static_dir: 
 
-- url: /(.*\.php)$
+- url: /(.+\.php)
   script: \1
 
 - url: /js
@@ -38,11 +37,10 @@ handlers:
 - url: /upload
   static_dir: upload
 
-- url: /(.*\.(gif|png|jpg))$
+- url: /(.*\.(gif|png|jpg))
   static_files: static/\1
   upload: static/.*\.(gif|png|jpg)$
   
-- url: /(.*\.pdf)
+- url: /upload/(.*\.pdf)
   mime_type: application/pdf
-  static_files: static/\1
-  upload: static/(.*\.pdf)
+  static_dir: upload

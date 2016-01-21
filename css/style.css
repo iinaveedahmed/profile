@@ -514,11 +514,29 @@ header{
 	padding:0px;
 	float:none;
 }
+.skills .bod {
+    border-top: 1px solid #ddd;
+    margin: -10px 0;
+    padding: 10px 0 0;
+}
 .technical .skills p{
 	color:#84868d;
 	font-size:13px;
 	line-height:18px;
 	text-align:center;
+}
+.skills p span {
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background: #e5e5e5;
+    padding: 2px;
+    font-size: smaller;
+    margin: 2px;
+}
+.technical .skills .fa {
+    font-size: 80px;
+    color: #00BDBD;
 }
 .technical .skills img{
 	margin:0 auto;
