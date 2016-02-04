@@ -1,10 +1,17 @@
 runtime: php55
 api_version: 1
-
 handlers:
 - url: /
   script: index.html
 #  static_dir: 
+
+- url: /robots.txt
+  static_files: robots.txt
+  upload: robots.txt
+  
+- url: /sitemap.xml
+  static_files: sitemap.xml
+  upload: sitemap.xml
 
 - url: /(.+\.php)
   script: \1
