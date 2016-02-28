@@ -32,7 +32,7 @@
 
 		curl_close($ch);
 
-		print_r($result);
+		//print_r($result);
 
 		echo "Message successfully sent!";
 	}
