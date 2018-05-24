@@ -1,5 +1,7 @@
 runtime: php55
 api_version: 1
+default_expiration: 1d
+
 handlers:
 - url: /
   script: index.html
@@ -23,20 +25,14 @@ handlers:
   static_dir: css
 
 - url: /fonts/(.*\.eot)
-  static_dir: fonts
+  static_files: fonts
+  upload: fonts
   mime_type: application/x-font-otf
-
-- url: /fonts/(.*\.svg)
-  static_dir: fonts
-  mime_type: application/x-font-svg
-
-- url: /fonts/(.*\.ttf)
-  static_dir: fonts
-  mime_type: application/x-font-ttf
-
-- url: /fonts/(.*\.woff)
-  static_dir: fonts
-  mime_type: application/x-font-woff
+  
+- url: /fonts/(.*\.(ico|jpg|jpeg|png|gif|woff|woff2|ttf|otf|eot|svg))$
+  static_files: fonts/\1
+  upload: fonts/.*\.(ico|jpg|jpeg|png|gif|woff|woff2|ttf|otf|eot|svg)$
+  application_readable: true
 
 - url: /images
   static_dir: images
@@ -48,6 +44,6 @@ handlers:
   static_files: static/\1
   upload: static/.*\.(gif|png|jpg)$
   
-- url: /upload/(.*\.pdf)
+- url: /upload/.*\.pdf
   mime_type: application/pdf
   static_dir: upload
