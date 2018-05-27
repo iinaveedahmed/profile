@@ -16,9 +16,6 @@
 			'subject'	=> $name.' through inaveed.com web form',
 			'text'		=> $compose
 		);
-		
-		$abc = new User();
-		$abc->mytest()
 
 		$ch = curl_init();
 

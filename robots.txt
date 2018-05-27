@@ -1,4 +1,4 @@
 User-Agent: *
 Disallow: 
 
-Sitemap: http://profile.inaveed.com/sitemap.xml
+Sitemap: https://inaveed.com/sitemap.xml

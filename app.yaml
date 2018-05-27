@@ -5,7 +5,6 @@ default_expiration: 1d
 handlers:
 - url: /
   script: index.html
-#  static_dir: 
 
 - url: /robots.txt
   static_files: robots.txt
@@ -28,11 +27,6 @@ handlers:
   static_files: fonts
   upload: fonts
   mime_type: application/x-font-otf
-  
-- url: /fonts/(.*\.(ico|jpg|jpeg|png|gif|woff|woff2|ttf|otf|eot|svg))$
-  static_files: fonts/\1
-  upload: fonts/.*\.(ico|jpg|jpeg|png|gif|woff|woff2|ttf|otf|eot|svg)$
-  application_readable: true
 
 - url: /images
   static_dir: images
