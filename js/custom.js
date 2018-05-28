@@ -15,6 +15,10 @@ jQuery(function ($) {
             itemHover: 'active',
             topMargin: 'auto'
         });
+
+        $('.menu-mob a').click(function () {
+            $('.navbar-collapse').removeClass('in')
+        })
     });
 });
 
@@ -27,9 +31,10 @@ jQuery(function ($) {
             if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
                 let target = $(this.hash);
                 target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                let scrollFix = $(window).width() <= 767 ? 62 : 0;
                 if (target.length) {
                     $('html,body').animate({
-                        scrollTop: target.offset().top
+                        scrollTop: target.offset().top + scrollFix
                     }, 1000);
                 }
                 if($(this).parent().hasClass('menuItem')) {
