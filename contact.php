@@ -24,15 +24,13 @@
 			CURLOPT_USERPWD 		=> 'api:key-c6dbb8764614a4ac956340e667b49d7b',
 		    CURLOPT_RETURNTRANSFER 	=> 1,
 		    CURLOPT_CUSTOMREQUEST	=> 'POST',
-		    CURLOPT_URL				=> 'https://api.mailgun.net/v2/inaveed.com/messages',
+		    CURLOPT_URL				=> 'https://api.mailgun.net/v3/mg.inaveed.com/messages',
 			CURLOPT_POSTFIELDS 		=> implode('&', $dt)
 		));
 
 		$result = curl_exec($ch);
 
 		curl_close($ch);
-
-		//print_r($result);
 
 		echo "Message successfully sent!";
 	}
@@ -42,4 +40,3 @@
 		echo $v;
 		die();
 	}
-?>

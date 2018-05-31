@@ -9,7 +9,7 @@ jQuery(function ($) {
                 2: 'technical',
                 3: 'experience',
                 4: 'education',
-                5: 'contact'
+                5: 'tag'
             },
             itemClass: 'menuItem',
             itemHover: 'active',

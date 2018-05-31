@@ -2,6 +2,11 @@ runtime: php55
 api_version: 1
 default_expiration: 1d
 
+skip_files:
+- .git/
+- .settings/
+- .idea/
+
 handlers:
 - url: /
   script: index.html
@@ -9,10 +14,30 @@ handlers:
 - url: /robots.txt
   static_files: robots.txt
   upload: robots.txt
+
+- url: /favicon.ico
+  static_files: favicon.ico
+  upload: favicon.ico
+
+- url: /service-worker.js
+  static_files: service-worker.js
+  upload: service-worker.js
   
 - url: /sitemap.xml
   static_files: sitemap.xml
   upload: sitemap.xml
+
+- url: /browserconfig.xml
+  static_files: browserconfig.xml
+  upload: browserconfig.xml
+
+- url: /safari-pinned-tab.svg
+  static_files: safari-pinned-tab.svg
+  upload: safari-pinned-tab.svg
+
+- url: /site.webmanifest
+  static_files: site.webmanifest
+  upload: site.webmanifest
 
 - url: /(.+\.php)
   script: \1
@@ -35,8 +60,8 @@ handlers:
   static_dir: upload
 
 - url: /(.*\.(gif|png|jpg))
-  static_files: static/\1
-  upload: static/.*\.(gif|png|jpg)$
+  static_files: \1
+  upload: .*\.(gif|png|jpg)$
   
 - url: /upload/.*\.pdf
   mime_type: application/pdf
