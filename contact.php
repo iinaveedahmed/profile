@@ -21,10 +21,8 @@
 
 		curl_setopt_array($ch, array(
 		    CURLOPT_HTTPAUTH		=> CURLAUTH_BASIC,
-			CURLOPT_USERPWD 		=> 'api:key-c6dbb8764614a4ac956340e667b49d7b',
 		    CURLOPT_RETURNTRANSFER 	=> 1,
-		    CURLOPT_CUSTOMREQUEST	=> 'POST',
-		    CURLOPT_URL				=> 'https://api.mailgun.net/v2/inaveed.com/messages',
+		    CURLOPT_CUSTOMREQUEST	=> 'POST'
 			CURLOPT_POSTFIELDS 		=> implode('&', $dt)
 		));
 
